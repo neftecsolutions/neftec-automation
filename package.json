@@ -13,9 +13,9 @@
     "dev:frontend": "concurrently -n \"GUI,API,ENG\" -c \"bgBlue.bold,bgGreen.bold,bgRed.bold\" \"npm:serve:frontend\" \"npm:serve:backend\" \"npm:serve:engine\"",
     "start": "npm i && npm run dev",
     "test:e2e": "nx run tests-e2e:test-e2e",
-    "cli": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json  packages/cli/src/index.ts",
-    "create-piece": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json  packages/cli/src/index.ts pieces create",
-    "create-action": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json  packages/cli/src/index.ts actions create",
+    "cli": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json packages/cli/src/index.ts",
+    "create-piece": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json packages/cli/src/index.ts pieces create",
+    "create-action": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json packages/cli/src/index.ts actions create",
     "create-trigger": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json packages/cli/src/index.ts triggers create",
     "sync-pieces": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json packages/cli/src/index.ts pieces sync",
     "build-piece": "npx ts-node -r tsconfig-paths/register --project packages/cli/tsconfig.json packages/cli/src/index.ts pieces build",
@@ -25,7 +25,7 @@
     "pull-i18n": "crowdin pull --config crowdin.yml",
     "push-i18n": "crowdin upload sources",
     "i18n:extract": "i18next --config packages/react-ui/i18next-parser.config.js",
-    "bump-translated-pieces": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/pieces/bump-translated-pieces.ts"
+    "bump-translated-pieces": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/pieces/bump-translated-pieces.ts",
     "build": "nx build server-api && nx build react-ui",
     "start:prod": "node dist/apps/server-api/main.js"
   },
