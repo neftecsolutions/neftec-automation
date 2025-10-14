@@ -27,8 +27,8 @@
     "i18n:extract": "i18next --config packages/react-ui/i18next-parser.config.js",
     "bump-translated-pieces": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/pieces/bump-translated-pieces.ts",
     "build": "nx build server-api && nx build react-ui",
-    "start:prod": "npm run build && node dist/apps/server-api/main.js"
-  },
+    "start:prod": "npm run build && node dist/packages/server-api/main.js || node dist/apps/api/main.js"
+ },
   "private": true,
   "dependencies": {
     "@activepieces/import-fresh-webpack": "3.3.0",
