@@ -26,6 +26,8 @@
     "push-i18n": "crowdin upload sources",
     "i18n:extract": "i18next --config packages/react-ui/i18next-parser.config.js",
     "bump-translated-pieces": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/pieces/bump-translated-pieces.ts"
+    "build": "nx build server-api && nx build react-ui",
+    "start:prod": "node dist/apps/server-api/main.js",
   },
   "private": true,
   "dependencies": {
