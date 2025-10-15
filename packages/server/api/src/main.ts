@@ -12,9 +12,10 @@ import { workerPostBoot } from './app/worker'
 
 const start = async (app: FastifyInstance): Promise<void> => {
     try {
-        await app.listen({
-            host: '0.0.0.0',
-            port: 3000,
+       const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+await app.listen({ host: '0.0.0.0', port: PORT });
+console.log(`✅ Server started successfully on port ${PORT}`);
+
         })
         if (system.isWorker()) {
             await workerPostBoot(app)
