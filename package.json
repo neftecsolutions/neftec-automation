@@ -27,7 +27,7 @@
     "i18n:extract": "i18next --config packages/react-ui/i18next-parser.config.js",
     "bump-translated-pieces": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/pieces/bump-translated-pieces.ts",
     "build": "nx build server-api && nx build react-ui",
-    "start:prod": "npm run build && node dist/packages/server/api/main.js"
+    "start:prod": "npm run build && sh -c 'echo \"---- ENV ----\"; printenv | grep -E \"PORT|REDIS|AP_\" || true; echo \"---- DIST LISTING ----\"; ls -la dist || true; echo \"---- TRY START ----\"; node dist/packages/server/api/main.js || node dist/packages/server/api/main.mjs || node dist/packages/server/api/main || node dist/packages/server/api/main.cjs || node dist/packages/server/api/index.js || node dist/apps/api/main.js || (echo \"no main found at expected paths\"; exit 1)'"
  },
   "private": true,
   "dependencies": {
