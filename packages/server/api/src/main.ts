@@ -14,7 +14,7 @@ const start = async (app: FastifyInstance): Promise<void> => {
   try {
     const port = Number(process.env.PORT) || 8000;
     await app.listen({ host: '0.0.0.0', port });
-    console.log(`✅ Server is running on port ${port}`);
+    
 
     if (system.isWorker()) {
       await workerPostBoot(app);
